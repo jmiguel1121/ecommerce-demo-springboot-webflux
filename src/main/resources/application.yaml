@@ -1,0 +1,35 @@
+server:
+  port: 8080
+
+
+basePath: /v2
+
+spring:
+  application:
+    name: demo-comercio-electronico
+
+  r2dbc:
+    url: r2dbc:h2:mem:///demo-comercio;DB_CLOSE_DELAY=-1
+    username: test
+    password: test
+    initialization-mode: always
+    #properties:
+     # schema: PUBLIC
+  h2:
+    console:
+      enabled: true
+      path: /h2
+
+logging:
+  level:
+    io:
+      reflectoring: INFO
+    org:
+      springframework:
+        web: DEBUG
+
+    reactor:
+      netty:
+        http:
+          client: DEBUG
+
